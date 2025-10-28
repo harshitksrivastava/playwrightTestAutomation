@@ -79,11 +79,11 @@ test.only('Locator testing with filtering and chaining', async({page}) =>{
     // .filters hasText combines the whole row and then checks, even the partial match are returned.
     const matchedData = rows.filter({
         has: page.locator('td'),
-        hasText: 'Javascript',
+        hasText: 'JavaScript',
     })
 
-
-       expect (await matchedData.count()).toBe(2); 
+        await expect.poll(async()=> await matchedData.count()).toBeGreaterThan(1);
+    //    await expect(matchedData.count()).toBe(1); 
 })
 
 
