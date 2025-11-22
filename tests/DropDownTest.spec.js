@@ -78,7 +78,7 @@ test.describe('Handling multi select dropdown', () => {
 })
 
 
-test.describe.only('Handling Bootstrap dropdown', () => {
+test.describe('Handling Bootstrap dropdown', () => {
 
     test('single selection bootstrap dropdown', async ({ page }) => {
 
@@ -100,7 +100,7 @@ test.describe.only('Handling Bootstrap dropdown', () => {
         expect(await dropdown.inputValue()).toBe('choice 2 1');
     })
 
-    test.only('multi select bootstrap dropdown', async ({ page }) => {
+    test('multi select bootstrap dropdown', async ({ page }) => {
         await page.goto('https://www.jqueryscript.net/demo/Drop-Down-Combo-Tree/');
 
         // click on the dropdown input box
@@ -136,6 +136,24 @@ test.describe.only('Handling Bootstrap dropdown', () => {
         
         expect(selectedText).toEqual(expect.arrayContaining(['choice 2 1','choice 2 2']));
     })
-
-
 })
+
+test.describe.only('Handling Auto suugested dropdowns', ()=>{
+        test('handle auto suggested dropdowns and hidden items', async({page}) =>{
+
+            await page.goto('https://demoqa.com/auto-complete');
+
+            await page.locator('#autoCompleteMultipleInput').fill('r');
+
+            await page.waitForSelector('.auto-complete__menu');
+
+            const optionList = await page.$$('.auto-complete__menu div.auto-complete__option');
+
+            for(let option of optionList){
+                if((await option.textContent()).toLowerCase().includes('red')){
+                    await option.click();
+                    break;
+            }
+        }
+    });
+    })
