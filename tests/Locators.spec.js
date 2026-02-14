@@ -60,7 +60,7 @@ test('Locator Test getByTestId', async({page}) =>{
 })
 
 
-test.only('Locator testing with filtering and chaining', async({page}) =>{
+test('Locator testing with filtering and chaining', async({page}) =>{
     await page.goto('https://testautomationpractice.blogspot.com/p/playwrightpractice.html');
 
     // clicks the edit profile button inside the same dic as text John Doe

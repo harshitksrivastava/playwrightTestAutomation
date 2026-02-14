@@ -8,7 +8,7 @@ test.describe('Assertions suite', () => {
         await expect(page).toHaveURL('https://testautomationpractice.blogspot.com/p/playwrightpractice.html');
     })
 
-    test.only('Locator Assertions', async ({ page }) => {
+    test('Locator Assertions', async ({ page }) => {
 
         await page.goto('https://testautomationpractice.blogspot.com/p/playwrightpractice.html');
 
@@ -44,7 +44,7 @@ test.describe('Assertions suite', () => {
         await expect(navigationItems).toHaveCount(3);
     })
 
-    test.only('Soft Assertions', async({page}) =>{
+    test('Soft Assertions', async({page}) =>{
         await page.goto('https://testautomationpractice.blogspot.com/p/playwrightpractice.html');
 
         // toBeVisible()
