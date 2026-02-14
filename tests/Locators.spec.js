@@ -12,7 +12,7 @@ test('Locator Test getByAltText', async({page}) =>{
     // can not use toBeVisible directly with locator object
     await page.getByAltText('logo image').isVisible();    
 
-    await page.locator('img[alt="logo image"]').waitForElementState('visible');
+    await page.locator('img[alt="logo image"]').waitFor();
     await page.close();
 });
 
@@ -60,7 +60,7 @@ test('Locator Test getByTestId', async({page}) =>{
 })
 
 
-test.only('Locator testing with filtering and chaining', async({page}) =>{
+test('Locator testing with filtering and chaining', async({page}) =>{
     await page.goto('https://testautomationpractice.blogspot.com/p/playwrightpractice.html');
 
     // clicks the edit profile button inside the same dic as text John Doe

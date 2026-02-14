@@ -7,7 +7,7 @@ test('Home Page Test', async({page}) => {
     // Verify the title of the page
     let pageTitle = await page.title();
     console.log("Page Title is: " + pageTitle);
-    await expect(page).toHaveTitle('DEMOQA');
+    await expect(page).toHaveTitle('demosite');
 
     await page.close();
 
