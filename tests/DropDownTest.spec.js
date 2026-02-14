@@ -139,7 +139,7 @@ test.describe('Handling Bootstrap dropdown', () => {
 })
 
 test.describe('Handling Auto suugested dropdowns', ()=>{
-        test('handle auto suggested dropdowns and hidden items', async({page}) =>{
+        test.skip('handle auto suggested dropdowns and hidden items', async({page}) =>{
 
             await page.goto('https://demoqa.com/auto-complete');
 

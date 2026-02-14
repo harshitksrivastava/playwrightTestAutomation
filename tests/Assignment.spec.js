@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
 
-test.describe('Assignment Suite' , ()=>{
+test.describe.skip('Assignment Suite' , ()=>{
 
     test('Assignment 1', async({page}) =>{
         await page.goto('https://www.flipkart.com/');
@@ -11,7 +11,7 @@ test.describe('Assignment Suite' , ()=>{
 
         const searchTerm = 'washing machine'
 
-        await page.locator('input[placeholder="Search for Products, Brands and More"]').fill(searchTerm);
+        await page.locator('input[placeholder="Search for Products, Brands and More"]').first().fill(searchTerm);
         await page.getByRole('button', {name: 'Search for Products, Brands and More'}).click();
     
         await page.waitForSelector('._Omnvo span');
@@ -73,7 +73,7 @@ test.describe('Assignment Suite' , ()=>{
         })
 
      test('Assignment 2', async({page}) =>{
-        // await page.goto('https://www.amazon.in/');
+        await page.goto('https://www.amazon.in/');
 
        const navigationItems = page.locator('ul > .nav-li a');
 

@@ -12,7 +12,7 @@ test('Locator Test getByAltText', async({page}) =>{
     // can not use toBeVisible directly with locator object
     await page.getByAltText('logo image').isVisible();    
 
-    await page.locator('img[alt="logo image"]').waitForElementState('visible');
+    await page.locator('img[alt="logo image"]').waitFor();
     await page.close();
 });
 

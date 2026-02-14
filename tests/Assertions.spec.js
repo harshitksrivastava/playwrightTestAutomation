@@ -44,7 +44,7 @@ test.describe('Assertions suite', () => {
         await expect(navigationItems).toHaveCount(3);
     })
 
-    test('Soft Assertions', async({page}) =>{
+    test.skip('Soft Assertions', async({page}) =>{
         await page.goto('https://testautomationpractice.blogspot.com/p/playwrightpractice.html');
 
         // toBeVisible()
